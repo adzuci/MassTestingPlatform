@@ -46,7 +46,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php composer-setup.php && \ 
     php -r "unlink('composer-setup.php');" && \
     chmod +x composer.phar && \
-    mv composer.phar /usr/local/bin/
+    mv composer.phar /usr/local/bin/ && \
     ln -s /usr/local/bin/composer.phar /usr/local/bin/composer
 
 ENV PROJECT_DIR=/var/www/html \
