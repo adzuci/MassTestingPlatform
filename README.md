@@ -11,6 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 Software that is needed to get started:
 
 * Docker
+* Docker Compose
 * Git
 
 ### Installation
