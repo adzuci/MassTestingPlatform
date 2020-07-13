@@ -13,6 +13,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
+    - name: Build
+      run: docker-compose build --build-arg CERT_URL=
+      env:
+        APP_HOST: localhost
     - name: Build and push image
       uses: docker/build-push-action@v1
       with:
