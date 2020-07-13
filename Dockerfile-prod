@@ -23,18 +23,18 @@ RUN apt-get update \
  bzip2 \
  libbz2-dev \
  zlib1g-dev \
-# libfontconfig \
-# libfreetype6-dev \
-# libjpeg62-turbo-dev \
-# libpng-dev \
-# libicu-dev \
-# libxml2-dev \
-# libldap2-dev \
+ libfontconfig \
+ libfreetype6-dev \
+ libjpeg62-turbo-dev \
+ libpng-dev \
+ libicu-dev \
+ libxml2-dev \
+ libldap2-dev \
  libmcrypt-dev \
  python-pip \
-# fabric \
-# jq \
-# gnupg \
+ fabric \
+ jq \
+ gnupg \
  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN docker-php-ext-install mysqli gettext gd
