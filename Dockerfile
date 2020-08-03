@@ -75,5 +75,5 @@ VOLUME $PROJECT_DIR/storage
 # Enter the container with immediate access to project root
 WORKDIR $PROJECT_SRC
 
-ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/docker-entrypoint.sh"]
 CMD ["run"]

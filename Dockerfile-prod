@@ -57,8 +57,9 @@ RUN mkdir $PROJECT_SRC
 RUN docker-php-ext-install mysqli gettext gd
 
 COPY ./src $PROJECT_DIR
-COPY ./vendor $VENDOR_DIR
 COPY ./data $DATA_DIR
+
+
 
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 RUN echo 'export NVM_NODEJS_ORG_MIRROR=http://nodejs.org/dist/' >> /root/.bashrc
@@ -75,5 +76,5 @@ VOLUME $PROJECT_DIR/storage
 # Enter the container with immediate access to project root
 WORKDIR $PROJECT_SRC
 
-ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/docker-entrypoint.sh"]
 CMD ["run"]
