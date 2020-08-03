@@ -13,13 +13,22 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    - name: Build and push image
+    - name: Setup Environment
+      run: cp .sample.env .env
+    - name: Build
+      run: docker-compose build --build-arg
+      env:
+        APP_HOST: localhost
+        DB_USERNAME: user
+        DB_PASSWORD: password
+        DB_NAME: masstestingplatform
+    - name: Build and Push Image
       uses: docker/build-push-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: adzuci/masstestingplatform
         path: .
-        dockerfile: ./Dockerfile
+        dockerfile: ./Dockerfile-prod
         tag_with_ref: true
         tag_with_sha: true
