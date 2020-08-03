@@ -26,7 +26,7 @@ Software that is needed to get started:
     * `cp .sample.env .env`
     * Edit `.env` with appropriate values
 4) Build the docker containers (may take some time to initialize)
-    * `docker-compose build --build-arg CERT_URL=`
+    * `docker-compose -f docker-compose.yml build`
 5) Stand up the docker container
     * `docker-compose up`
 6) Open up a **new terminal** and get into the container
@@ -84,21 +84,7 @@ If you are having issues with your environment consider the following:
 3) You can run `docker-compose build --no-cache --build-arg CERT_URL=` to force rebuild the containers.
 4) As a last resort, you can completely delete and start over using `docker rm -v mtp_database`. Use only if all options have been tried because this deletes the existing database.
 
-## Running the tests
-
-### Unit Testing
-
->WIP
-
-### Integration Testing
-
->WIP
-
-### End to End (E2E) Testing
-
->WIP
-
-## Docker (Fork Notes)
+## Docker
 
 To start over and delete the existing database (fresh install), run:
 
@@ -161,11 +147,9 @@ php src/index.php migrate
 # {"expectedVersion":13,"actualVersion":"12"}
 ```
 
-
-
 ## Built With
 
-* [easyappointments.org](http://easyappointments.org) - The web schedule app we forked from
+* [easyappointments.org](http://easyappointments.org)
 
 ## Notes from Fork
 
