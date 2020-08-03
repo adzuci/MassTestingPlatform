@@ -47,7 +47,7 @@ if [ -z "$GIT_HASH" ]; then
       echo "Git is not available"
 else
       echo "Setting git hash '$GIT_HASH' in config"
-      sed -i "s/GIT_HASH\s*=\s*'[a-fA-F0-9]*'/GIT_HASH = '$GIT_HASH'/g" ${DIR}/../src/config.php
+      sed -i "s/GIT_HASH\s*=\s*'[a-fA-F0-9]*'/GIT_HASH = '$GIT_HASH'/g" /var/www/html/config.php
 fi
 
 
