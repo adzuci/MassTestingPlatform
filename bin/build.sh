@@ -37,7 +37,7 @@ gulp sass
 
 
 printTitle "Database Updates"
-php ${DIR}/../src/index.php migrate update
+#php ${DIR}/../src/index.php migrate update
 
 
 printTitle "Setting Git Hash"

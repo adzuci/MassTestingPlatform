@@ -1,0 +1,11 @@
+# .dockerignore for edx-platform.
+# There's a lot here, please try to keep it organized.
+
+### Files that are not needed in the docker file
+
+#.git
+vendor
+
+### Files private to developers
+
+.env
