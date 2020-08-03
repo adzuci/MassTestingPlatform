@@ -56,6 +56,10 @@ ENV PROJECT_DIR=/var/www/html \
 RUN mkdir $PROJECT_SRC
 RUN docker-php-ext-install mysqli gettext gd
 
+COPY ./src $PROJECT_DIR
+COPY ./vendor $VENDOR_DIR
+COPY ./data $DATA_DIR
+
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 RUN echo 'export NVM_NODEJS_ORG_MIRROR=http://nodejs.org/dist/' >> /root/.bashrc
 

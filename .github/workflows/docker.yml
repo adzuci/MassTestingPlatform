@@ -13,13 +13,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    - name: Build
-      run: docker-compose build --build-arg CERT_URL=
-      env:
-        APP_HOST: localhost
-        DB_USERNAME: user
-        DB_PASSWORD: password
-        DB_NAME: masstestingplatform
     - name: Build and push image
       uses: docker/build-push-action@v1
       with:
@@ -27,6 +20,6 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: adzuci/masstestingplatform
         path: .
-        dockerfile: ./Dockerfile-prod
+        dockerfile: ./Dockerfile
         tag_with_ref: true
         tag_with_sha: true
