@@ -16,7 +16,7 @@ jobs:
     - name: Setup Environment
       run: cp .sample.env .env
     - name: Build
-      run: docker-compose build --build-arg
+      run: docker-compose build
       env:
         APP_HOST: localhost
         DB_USERNAME: user
